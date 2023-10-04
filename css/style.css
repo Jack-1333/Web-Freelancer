@@ -1,0 +1,162 @@
+:root {
+    --White: #ffffff;
+    --black: #000000;
+    --primary: #ffc107;
+    --secondary: #0097A7;
+    --grey: #757575;
+    --grisClaro: #DFE9F3;
+}
+
+html {
+    font-size: 62.5%;
+    /*Se utiliza para resetear los pixeles y utilizae rem.*/
+    box-sizing: border-box;
+}
+
+/*aplicar un modelo de diseño de caja natural a todos los elementos, pero permitiendo que los componentes cambien*/
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 16px;
+    /*1rem = 10px*/
+    /* font-family: 'Oswald', sans-serif; */
+    font-family: 'Krub', sans-serif;
+}
+
+/*Title*/
+h1 {
+    font-size: 3.8rem;
+}
+
+h2 {
+    font-size: 2.8rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
+}
+
+.title span,
+h2 span {
+    font-size: 2rem;
+    color: var(--primary);
+}
+
+/*Navigation*/
+.nav-bg {
+    background-color: var(--secondary);
+}
+
+.container {
+    max-width: 90rem;
+    margin: 0 auto;
+}
+
+.navigation-main {
+    display: flex;
+    flex-direction: column;
+}
+
+.navigation-main a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: var(--White);
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem;
+}
+
+/*Animacion*/
+.navigation-main a:hover {
+    background-color: var(--primary);
+    color: var(--black);
+}
+
+@media (min-width: 480px) {
+    .navigation-main {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+/*Hero*/
+.hero {
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    position: relative;
+    margin-bottom: 2rem;
+}
+.content-hero {
+    position: absolute;
+    background-color: rgb(0 0 0 / 70%);
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    /*Activa ordenamienti horizontal default*/
+    flex-direction: column;
+    /*Cambia a ordenamiento vertical*/
+    align-items: center;
+    /*Centra el contenido horizontalmente*/
+    justify-content: center; 
+}
+.content-hero h2, 
+.content-hero p {
+    color: var(--White);
+}
+
+.button {
+    background-color: var(--secondary);
+    color: var(--White);
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    /*Quita el tachado*/
+    text-transform: uppercase;
+    /*Cambia a mayuscula*/
+    font-weight: bold;
+    /*Cambia a negrita*/
+    border-radius: .5rem;
+    /*Redondea el borde*/
+    width: 90%;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .button {
+        width: auto;
+    }
+}
+
+.shadow {
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 1);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 1);
+    box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 1);
+    background-color: var(--White);
+    padding: 2rem;
+}
+/** Services **/
+@media (min-width: 768px) {
+    .services {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        /* grid-template-columns: repeat(3, 1fr); */
+        /*grid-template-columns: 300px 300px;/*define el acho de columna*/
+        /*grid-template-rows: 200px 800px; define el acho de fila*/
+    
+        /*grid: 200px 800px / 300px 300px forma resumida primero se empieza con rows*/ 
+    }
+}
+
+
