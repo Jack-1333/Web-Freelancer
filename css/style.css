@@ -13,6 +13,7 @@ html {
     box-sizing: border-box;
     scroll-snap-type: y mandatory;
 }
+
 /** Scroll Snap**/
 .services,
 .navigation-main,
@@ -20,8 +21,11 @@ html {
     scroll-snap-align: center;
     scroll-snap-stop: always;
 }
+
 /*aplicar un modelo de diseño de caja natural a todos los elementos, pero permitiendo que los componentes cambien*/
-*, *:before, *:after {
+*,
+*:before,
+*:after {
     box-sizing: inherit;
 }
 
@@ -30,7 +34,7 @@ body {
     /*1rem = 10px*/
     /* font-family: 'Oswald', sans-serif; */
     font-family: 'Krub', sans-serif;
-    background-image: linear-gradient(to top, var(--grey) 0%, var(--White) 100% );
+    background-image: linear-gradient(to top, var(--black) 0%, var(--White) 100%);
 }
 
 /*Title*/
@@ -58,19 +62,69 @@ h2 span {
     color: var(--primary);
 }
 
+/*Utilidades*/
+.w-sm-100 {
+    width: 100%;
+    /*agrega un ancho de 100% al boton enviar del formulario*/
+}
+@media (min-width: 768px) {
+    .w-sm-100 {
+        width: auto;
+    }
+}
+
+.flex {
+    display: flex;
+}
+
+.align-right {
+    justify-content: flex-end;
+}
+
 /*Navigation*/
 .nav-bg {
     background-color: var(--secondary);
 }
 
 .container {
-    max-width: 90rem;
+    max-width: 100rem;
     margin: 0 auto;
 }
 
 .navigation-main {
     display: flex;
     flex-direction: column;
+}
+
+.button {
+    background-color: var(--secondary);
+    color: var(--White);
+    padding: 1rem 3rem;
+    margin-top: 3rem;
+    font-size: 2rem;
+    text-decoration: none;
+    /*Quita el tachado*/
+    text-transform: uppercase;
+    /*Cambia a mayuscula*/
+    font-weight: bold;
+    /*Cambia a negrita*/
+    border-radius: .5rem;
+    /*Redondea el borde*/
+    width: 90%;
+    text-align: center;
+    border: none;
+    /*Quita el boder de la etiqueta input en el formulario, elimina el puntero de enlace*/
+}
+
+.button:hover {
+    cursor: pointer;
+    /*Recupera el puntero de enlace que habia perdido la etiqueta input*/
+}
+
+@media (min-width: 768px) {
+    .button {
+        width: auto;
+    }
 }
 
 .navigation-main a {
@@ -95,6 +149,7 @@ h2 span {
         justify-content: space-between;
     }
 }
+
 /*Hero*/
 .hero {
     background-image: url(../img/hero.jpg);
@@ -104,6 +159,7 @@ h2 span {
     position: relative;
     margin-bottom: 2rem;
 }
+
 .content-hero {
     position: absolute;
     background-color: rgb(0 0 0 / 70%);
@@ -116,104 +172,97 @@ h2 span {
     /*Cambia a ordenamiento vertical*/
     align-items: center;
     /*Centra el contenido horizontalmente*/
-    justify-content: center; 
+    justify-content: center;
 }
-.content-hero h2, 
+
+.content-hero h2,
 .content-hero p {
     color: var(--White);
 }
 
-.button {
-    background-color: var(--secondary);
-    color: var(--White);
-    padding: 1rem 3rem;
-    margin-top: 1rem;
-    font-size: 2rem;
-    text-decoration: none;
-    /*Quita el tachado*/
-    text-transform: uppercase;
-    /*Cambia a mayuscula*/
-    font-weight: bold;
-    /*Cambia a negrita*/
-    border-radius: .5rem;
-    /*Redondea el borde*/
-    width: 90%;
-    text-align: center;
-}
-
-@media (min-width: 768px) {
-    .button {
-        width: auto;
-    }
-}
-
 .shadow {
-    -webkit-box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 1);
-    -moz-box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 1);
-    box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 1);
+    -webkit-box-shadow: 0px 5px 15px 0px rgb(192, 241, 56);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(192, 241, 56, 1);
+    box-shadow: 0px 5px 15px 0px rgba(192, 241, 56, 1);
     background-color: var(--White);
     padding: 2rem;
+    border-radius: 1rem;
 }
+
 /** Services **/
 @media (min-width: 768px) {
     .services {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 5rem;
+        /*Da separacion a la columnas*/
         /* grid-template-columns: repeat(3, 1fr); */
         /*grid-template-columns: 300px 300px;/*define el acho de columna*/
         /*grid-template-rows: 200px 800px; define el acho de fila*/
-    
-        /*grid: 200px 800px / 300px 300px forma resumida primero se empieza con rows*/ 
+
+        /*grid: 200px 800px / 300px 300px forma resumida primero se empieza con rows*/
     }
 }
+
+/*Servicios*/
 .service {
     display: flex;
     flex-direction: column;
+    /*Cambia el sentido de orientacion*/
     align-items: center;
 }
 
 .service h3 {
-    color: var(--secundario);
+    color: var(--secondary);
     font-weight: normal;
 }
+
 .service p {
     line-height: 2;
     text-align: center;
 }
+
 .service .icons {
     height: 15rem;
     width: 15rem;
-    background-color: var(--primario);
+    background-color: var(--primary);
     border-radius: 50%;
     display: flex;
     justify-content: space-evenly;
+    /*alinear horizontalmete*/
     align-items: center;
+    /*alinear vertcalmente*/
 }
 
 /** Contacto **/
 .formulario {
-    background-color: var(--gris);
-    width: min( 60rem, 100% ); /** Utilizar el valor más pequeño **/
+    background-color: var(--grey);
+    width: min(60rem, 100%);
+    /** Utilizar el valor más pequeño **/
     margin: 0 auto;
+    /*se utiliza para fulmulario y cuando el padre no tiene display flex*/
     padding: 2rem;
     border-radius: 1rem;
 }
+
 .formulario fieldset {
     border: none;
 }
+
 .formulario legend {
     text-align: center;
     font-size: 1.8rem;
     text-transform: uppercase;
     font-weight: 700;
     margin-bottom: 2rem;
-    color: var(--primario);
+    color: var(--primary);
 }
+
 @media (min-width: 768px) {
     .container-fields {
         display: grid;
         grid-template-columns: 50% 50%;
-        grid-template-rows: auto auto 20rem ;
+        grid-template-rows: auto auto 20rem;
         column-gap: 1rem;
     }
 
@@ -222,21 +271,25 @@ h2 span {
         grid-column: 1 / 3;
     }
 }
+
 .field {
     margin-bottom: 1rem;
 }
+
 .field label {
-    color: var(--blanco);
+    color: var(--White);
     font-weight: bold;
     margin-bottom: .5rem;
     display: block;
 }
+
 .field textarea {
     height: 20rem;
 }
 
 .input-text {
     width: 100%;
+    /*toma todo el espacio disponible*/
     border: none;
     padding: 1.5rem;
     border-radius: .5rem;
