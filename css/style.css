@@ -30,8 +30,7 @@ html {
 }
 
 body {
-    font-size: 16px;
-    /*1rem = 10px*/
+    font-size: 16px;/*1rem = 10px*/
     /* font-family: 'Oswald', sans-serif; */
     font-family: 'Krub', sans-serif;
     background-image: linear-gradient(to top, var(--black) 0%, var(--White) 100%);
@@ -63,23 +62,22 @@ h2 span {
 }
 
 /*Utilidades*/
-.w-sm-100 {
-    width: 100%;
-    /*agrega un ancho de 100% al boton enviar del formulario*/
+.w-100 {
+    width: 100%;/*agrega un ancho de 100% al boton enviar del formulario*/
 }
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
     .w-sm-100 {
         width: auto;
     }
-}
+} */
 
-.flex {
+/* .flex {
     display: flex;
-}
-
+} */
+/* 
 .align-right {
     justify-content: flex-end;
-}
+} */
 
 /*Navigation*/
 .nav-bg {
@@ -87,7 +85,7 @@ h2 span {
 }
 
 .container {
-    max-width: 100rem;
+    max-width: 120rem;
     margin: 0 auto;
 }
 
@@ -102,23 +100,17 @@ h2 span {
     padding: 1rem 3rem;
     margin-top: 3rem;
     font-size: 2rem;
-    text-decoration: none;
-    /*Quita el tachado*/
-    text-transform: uppercase;
-    /*Cambia a mayuscula*/
-    font-weight: bold;
-    /*Cambia a negrita*/
-    border-radius: .5rem;
-    /*Redondea el borde*/
+    text-decoration: none;/*Quita el tachado*/
+    text-transform: uppercase;/*Cambia a mayuscula*/
+    font-weight: bold;/*Cambia a negrita*/
+    border-radius: .5rem;/*Redondea el borde*/
     width: 90%;
     text-align: center;
-    border: none;
-    /*Quita el boder de la etiqueta input en el formulario, elimina el puntero de enlace*/
+    border: none;/*Quita el boder de la etiqueta input en el formulario, elimina el puntero de enlace*/
 }
 
 .button:hover {
-    cursor: pointer;
-    /*Recupera el puntero de enlace que habia perdido la etiqueta input*/
+    cursor: pointer;/*Recupera el puntero de enlace que habia perdido la etiqueta input*/
 }
 
 @media (min-width: 768px) {
@@ -143,7 +135,7 @@ h2 span {
     color: var(--black);
 }
 
-@media (min-width: 480px) {
+@media (min-width: 768px) {
     .navigation-main {
         flex-direction: row;
         justify-content: space-between;
@@ -237,10 +229,8 @@ h2 span {
 /** Contacto **/
 .formulario {
     background-color: var(--grey);
-    width: min(60rem, 100%);
-    /** Utilizar el valor más pequeño **/
-    margin: 0 auto;
-    /*se utiliza para fulmulario y cuando el padre no tiene display flex*/
+    width: min(60rem, 100%);/** Utilizar el valor más pequeño **/
+    margin: 0 auto;/*se utiliza para fulmulario y cuando el padre no tiene display flex*/
     padding: 2rem;
     border-radius: 1rem;
 }
@@ -288,8 +278,7 @@ h2 span {
 }
 
 .input-text {
-    width: 100%;
-    /*toma todo el espacio disponible*/
+    width: 100%;/*toma todo el espacio disponible*/
     border: none;
     padding: 1.5rem;
     border-radius: .5rem;
