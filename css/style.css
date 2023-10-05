@@ -35,65 +35,10 @@ body {
     font-family: 'Krub', sans-serif;
     background-image: linear-gradient(to top, var(--black) 0%, var(--White) 100%);
 }
-
-/*Title*/
-h1 {
-    font-size: 3.8rem;
-}
-
-h2 {
-    font-size: 2.8rem;
-}
-
-h3 {
-    font-size: 1.8rem;
-}
-
-h1,
-h2,
-h3 {
-    text-align: center;
-}
-
-.title span,
-h2 span {
-    font-size: 2rem;
-    color: var(--primary);
-}
-
-/*Utilidades*/
-.w-100 {
-    width: 100%;/*agrega un ancho de 100% al boton enviar del formulario*/
-}
-/* @media (min-width: 768px) {
-    .w-sm-100 {
-        width: auto;
-    }
-} */
-
-/* .flex {
-    display: flex;
-} */
-/* 
-.align-right {
-    justify-content: flex-end;
-} */
-
-/*Navigation*/
-.nav-bg {
-    background-color: var(--secondary);
-}
-
 .container {
     max-width: 120rem;
     margin: 0 auto;
 }
-
-.navigation-main {
-    display: flex;
-    flex-direction: column;
-}
-
 .button {
     background-color: var(--secondary);
     color: var(--White);
@@ -117,6 +62,56 @@ h2 span {
     .button {
         width: auto;
     }
+}
+
+/*Title*/
+h1 {
+    font-size: 3.8rem;
+}
+
+h2 {
+    font-size: 2.8rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h1,h2,h3 {
+    text-align: center;
+}
+
+.title span,h2 span {
+    font-size: 2rem;
+    color: var(--primary);
+}
+
+/*Utilidades*/
+.w-sm-100 {
+    width: 100%;/*agrega un ancho de 100% al boton enviar del formulario*/
+}
+@media (min-width: 768px) {
+    .w-sm-100 {
+        width: auto;
+    }
+}
+
+.flex {
+    display: flex;
+}
+
+.align-right {
+    justify-content: flex-end;
+} 
+
+/*Navigation*/
+.nav-bg {
+    background-color: var(--secondary);
+}
+
+.navigation-main {
+    display: flex;
+    flex-direction: column;
 }
 
 .navigation-main a {
@@ -247,18 +242,17 @@ h2 span {
     margin-bottom: 2rem;
     color: var(--primary);
 }
-
+/*Ordenamiento de formilarioa*/
 @media (min-width: 768px) {
     .container-fields {
         display: grid;
-        grid-template-columns: 50% 50%;
-        grid-template-rows: auto auto 20rem;
-        column-gap: 1rem;
+        grid-template-columns: 50% 50%; /*Crea 2 columnas iguales reapeat(2, 1fr)*/
+        grid-template-rows: auto auto 20rem; /*Crea 3 filas, el 20rem es para e textarea*/
+        column-gap: 1rem; /*Separacion de columnas*/
     }
-
-    .campo:nth-child(3),
-    .campo:nth-child(4) {
-        grid-column: 1 / 3;
+    /*Seleciona el orden de una clases de que repite dentro de una seccion seudoselector nth*/
+    .field:nth-child(3),.field:nth-child(4) {
+        grid-column: 1 / 3; /*Psisiciona un elemento dentro de grid / 1 / 3: significa que se va picisioonar de 1 a 3*/
     }
 }
 
